@@ -11,11 +11,37 @@ export function executeCommands(commands){
             if(position[1]+1<=grid[1]){
                 position[1]=position[1]+1
             }
-            
         }
-        if(command=="I"){
-            currentPosition=currentPosition+1
-            direction=getDirection(direction);
+        else{
+            if(command=="I"){
+                currentPosition=currentPosition+1
+                direction=getDirection(direction);
+            }
+            else{
+                if(command=="D"){
+                    currentPosition=currentPosition+1
+                    //direction=" E";
+                    switch(direction){
+                        case " N":{
+                            direction=" E"
+                            break;
+                        }
+                        case " E":{
+                            direction=" S"
+                            break;
+                        }
+                        case " S":{
+                            direction=" O"
+                            break;
+                        }
+                        case " O":{
+                            direction=" N"
+                            break;
+                        }
+                    }
+                }
+                
+            }
         }
         
     }

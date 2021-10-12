@@ -27,3 +27,20 @@ describe("Avanzar tomando en cuenta una posición inicial por defecto 0,0N y una
     });
   });
 
+  describe("Girar a la derecha tomando en cuenta una posición inicial por defecto 0,0N y una grilla por defecto 5,5", () => {
+    it("deberia girar a la derecha una vez", () => {
+      expect(executeCommands("D")).toEqual("0,0 E");
+    });
+    it("deberia girar a la derecha dos veces", () => {
+        expect(executeCommands("DD")).toEqual("0,0 S");
+      });
+    it("deberia girar a la derecha tres veces", () => {
+        expect(executeCommands("DDD")).toEqual("0,0 O");
+    });
+    it("deberia girar a la derecha cuatro veces", () => {
+        expect(executeCommands("DDDD")).toEqual("0,0 N");
+    });
+  });
+
+
+
