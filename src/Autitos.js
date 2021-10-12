@@ -1,5 +1,13 @@
 export function executeCommands(commands){
     let grid =[5,5]
+    if(commands.includes("/")){
+        let elements=commands.split("/")
+        commands=elements[0]
+        let  literalGrid=elements[1]
+        grid[0]=Number(literalGrid[0])
+        grid[1]=Number(literalGrid[2])
+    }
+    
     let position = [0,0]
     let direction = " N";
     let quantityOfCommands = commands.length
@@ -20,6 +28,9 @@ export function executeCommands(commands){
                     currentPosition=currentPosition+1
                     direction= turnRight(direction);
                 }   
+                else{
+                    currentPosition=currentPosition+1
+                }
             }
         }
     }
