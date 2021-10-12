@@ -15,30 +15,12 @@ export function executeCommands(commands){
         else{
             if(command=="I"){
                 currentPosition=currentPosition+1
-                direction=getDirection(direction);
+                direction=turnLeft(direction);
             }
             else{
                 if(command=="D"){
                     currentPosition=currentPosition+1
-                    //direction=" E";
-                    switch(direction){
-                        case " N":{
-                            direction=" E"
-                            break;
-                        }
-                        case " E":{
-                            direction=" S"
-                            break;
-                        }
-                        case " S":{
-                            direction=" O"
-                            break;
-                        }
-                        case " O":{
-                            direction=" N"
-                            break;
-                        }
-                    }
+                    direction= turnRight(direction);
                 }
                 
             }
@@ -48,7 +30,7 @@ export function executeCommands(commands){
     let finalPosition = ""+position[0]+","+position[1]+direction;
     return finalPosition;
 }
-function getDirection(direction){
+function turnLeft(direction){
     switch(direction){
         case " N": {
             direction=" O";
@@ -62,6 +44,27 @@ function getDirection(direction){
             break;
         }
         case " E":{
+            direction=" N"
+            break;
+        }
+    }
+    return direction;
+}
+function turnRight(direction){
+    switch(direction){
+        case " N":{
+            direction=" E"
+            break;
+        }
+        case " E":{
+            direction=" S"
+            break;
+        }
+        case " S":{
+            direction=" O"
+            break;
+        }
+        case " O":{
             direction=" N"
             break;
         }
