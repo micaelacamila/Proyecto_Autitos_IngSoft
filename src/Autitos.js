@@ -15,29 +15,30 @@ export function executeCommands(commands){
         }
         if(command=="I"){
             currentPosition=currentPosition+1
-            //direction=" O"
-            switch(direction){
-                case " N": {
-                    direction=" O";
-                    break;}
-                case " O":{
-                    direction=" S"
-                    break;
-                }
-                case " S":{
-                    direction=" E"
-                    break;
-                }
-                case " E":{
-                    direction=" N"
-                    break;
-                }
-            }
-
-            
+            direction=getDirection(direction);
         }
         
     }
     let finalPosition = ""+position[0]+","+position[1]+direction;
     return finalPosition;
+}
+function getDirection(direction){
+    switch(direction){
+        case " N": {
+            direction=" O";
+            break;}
+        case " O":{
+            direction=" S"
+            break;
+        }
+        case " S":{
+            direction=" E"
+            break;
+        }
+        case " E":{
+            direction=" N"
+            break;
+        }
+    }
+    return direction;
 }
