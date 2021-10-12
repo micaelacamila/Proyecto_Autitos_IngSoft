@@ -1,11 +1,10 @@
 export function executeCommands(commands){
-    let grid =[5,5]
-    if(commands.includes("/")){
-        grid = getElements(commands);
-    }
     
-    let position = [0,0]
-    let direction = " N";
+    let elements = getElements(commands)
+    commands=elements[0]
+    let direction=elements[1]
+    let grid=elements[2]
+    let position=elements[3]
     let quantityOfCommands = commands.length
     let currentPosition =0
     while(currentPosition<quantityOfCommands){
@@ -105,11 +104,34 @@ function moveForward(direction,position,grid){
     return position;
 }
 function getElements(commands){
+    let elements=[]
+
     let grid=[5,5]
-    let elements=commands.split("/")
-    commands=elements[0]
-    let  literalGrid=elements[1]
-    grid[0]=Number(literalGrid[0])
-    grid[1]=Number(literalGrid[2])
-    return grid;
+    let direction=" N"
+    let gridPosition =[0,0]
+
+    if(commands.includes("/")){
+        let parts=commands.split("/")
+    
+        commands=parts[0]
+        if(parts.length>=2){
+            let  literalGrid=parts[1]
+            grid[0]=Number(literalGrid[0])
+            grid[1]=Number(literalGrid[2])
+        }
+        if(parts.length==3){
+            let  literalGridPosition=parts[2]
+            gridPosition[0]=Number(literalGridPosition[0])
+            gridPosition[1]=Number(literalGridPosition[2])
+            direction=" "+literalGridPosition[3]
+        }
+    }
+    else{
+        commands=commands;
+    }
+    elements[0]=commands;
+    elements[1]=direction;
+    elements[2]=grid;
+    elements[3]=gridPosition;
+    return elements;  
 }

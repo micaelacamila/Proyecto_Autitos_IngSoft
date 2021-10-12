@@ -71,8 +71,18 @@ describe("Avanzar tomando en cuenta una posición inicial por defecto 0,0N y una
         expect(executeCommands("AAAAADADAAAAAAA/4,4")).toEqual("1,0 S");
     });
   });
-  
 
-
-
-
+  describe("Ejecutar la combinación de comandos tomando en cuenta una posición inicial especificada y una grilla especificada", () => {
+    it("deberia devolver la posición final según la posición inicial, los comandos y los límites de la grilla", () => {
+      expect(executeCommands("ADAAAA/3,3/1,1N")).toEqual("3,2 E");
+    });
+    it("deberia devolver la posición final según los comandos y los límites de la grilla", () => {
+        expect(executeCommands("ADAIAAIAAA/6,6/2,2E")).toEqual("5,4 N");
+      });
+    it("deberia devolver la posición final según los comandos y los límites de la grilla", () => {
+        expect(executeCommands("AAADAADAAIAA/6,6/5,5S")).toEqual("1,4 O");
+    });
+    it("deberia devolver la posición final según los comandos y los límites de la grilla", () => {
+        expect(executeCommands("AADAADAAAAADA/4,4/1,1O")).toEqual("4,2 S");
+    });
+  });
