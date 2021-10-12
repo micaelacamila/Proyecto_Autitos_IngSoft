@@ -8,8 +8,25 @@ export function executeCommands(commands){
         let command = commands[currentPosition];
         if(command=="A"){
             currentPosition=currentPosition+1
-            if(position[1]+1<=grid[1]){
-                position[1]=position[1]+1
+            if(direction==" N"){
+                if(position[1]+1<=grid[1]){
+                    position[1]=position[1]+1
+                }
+            }
+            if(direction==" E"){
+                if(position[0]+1<=grid[0]){
+                    position[0]=position[0]+1
+                }
+            }
+            if(direction==" O"){
+                if(position[0]-1>=0){
+                    position[0]=position[0]-1
+                }
+            }
+            if(direction==" S"){
+                if(position[1]-1>=0){
+                    position[1]=position[1]-1
+                }
             }
         }
         else{
@@ -21,11 +38,9 @@ export function executeCommands(commands){
                 if(command=="D"){
                     currentPosition=currentPosition+1
                     direction= turnRight(direction);
-                }
-                
+                }   
             }
         }
-        
     }
     let finalPosition = ""+position[0]+","+position[1]+direction;
     return finalPosition;
