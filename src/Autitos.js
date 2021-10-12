@@ -1,35 +1,40 @@
 export function executeCommands(commands){
     
     let elements = getElements(commands)
+
     commands=elements[0]
     let direction=elements[1]
     let grid=elements[2]
-    let position=elements[3]
+    let gridPosition=elements[3]
     let quantityOfCommands = commands.length
     let currentPosition =0
+
     while(currentPosition<quantityOfCommands){
         let command = commands[currentPosition];
-        if(command=="A"){
-            currentPosition=currentPosition+1
-            position=moveForward(direction,position,grid);
-        }
-        else{
-            if(command=="I"){
+        switch (command){
+            case "A":{
+                currentPosition=currentPosition+1
+                gridPosition=moveForward(direction,gridPosition,grid);
+                break;
+            }
+            case "I":{
                 currentPosition=currentPosition+1
                 direction=turnLeft(direction);
+                break;
             }
-            else{
-                if(command=="D"){
-                    currentPosition=currentPosition+1
-                    direction= turnRight(direction);
-                }   
-                else{
-                    currentPosition=currentPosition+1
-                }
+            case "D":{
+                currentPosition=currentPosition+1
+                direction= turnRight(direction);
+                break;
+            }
+            default:{
+                console.log("Command no entra "+command)
+                currentPosition=currentPosition+1
+                break;
             }
         }
     }
-    let finalPosition = ""+position[0]+","+position[1]+direction;
+    let finalPosition = ""+gridPosition[0]+","+gridPosition[1]+direction;
     return finalPosition;
 }
 function turnLeft(direction){

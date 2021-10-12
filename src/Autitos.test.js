@@ -86,3 +86,11 @@ describe("Avanzar tomando en cuenta una posición inicial por defecto 0,0N y una
         expect(executeCommands("AADAADAAAAADA/4,4/1,1O")).toEqual("4,2 S");
     });
   });
+  describe("Sending incorrect commands",()=>{
+    it("deberia devolver la posición inicial", () => {
+        expect(executeCommands("YWFTUB")).toEqual("0,0 N");
+      });
+      it("deberia devolver la posición inicial", () => {
+          expect(executeCommands("MCFPHJS/6,6/2,2E")).toEqual("2,2 E");
+        });
+  });
