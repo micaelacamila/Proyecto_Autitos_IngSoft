@@ -1,11 +1,7 @@
 export function executeCommands(commands){
     let grid =[5,5]
     if(commands.includes("/")){
-        let elements=commands.split("/")
-        commands=elements[0]
-        let  literalGrid=elements[1]
-        grid[0]=Number(literalGrid[0])
-        grid[1]=Number(literalGrid[2])
+        grid = getElements(commands);
     }
     
     let position = [0,0]
@@ -107,4 +103,13 @@ function moveForward(direction,position,grid){
 
     }
     return position;
+}
+function getElements(commands){
+    let grid=[5,5]
+    let elements=commands.split("/")
+    commands=elements[0]
+    let  literalGrid=elements[1]
+    grid[0]=Number(literalGrid[0])
+    grid[1]=Number(literalGrid[2])
+    return grid;
 }
