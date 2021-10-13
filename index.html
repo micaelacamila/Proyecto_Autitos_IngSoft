@@ -1,12 +1,24 @@
 <html>
   <body>
-    <h1>Sumador</h1>
-    <form id="sumar-form">
-      <label for="first-number">First Number:</label>
-      <input type="number" id="first-number" />
-      <label for="second-number">Second Number:</label>
-      <input type="number" id="second-number" />
-      <input type="submit" value="Sumar" />
+    <h1>Simulador_Autos</h1>
+    <form id="simular-form">
+
+      <em>Instructions.</em>
+      <br>
+      <p>Enter the Initial position</p><em>x,yD</em> <p>the grid size</p><em>x,y</em><p>and the commands you want to execute</p><em>A|I|D</em>
+      <p>The commands are required, if you don´t specify the initial position the default value is 0,0 N and the default size for the grid is 5x5</p><br>
+      <br>
+      <label for="initial-position">Initial position:</label>
+      <input type="string" id="initial-position" />
+
+      <label for="grid-size">Grid size:</label>
+      <input type="string" id="grid-size" />
+
+      <label for="commands">Commands:</label>
+      <input type="string" id="commands" />
+      <br>
+      <br>
+      <input type="submit" value="Obtener posición final" /> 
     </form>
     <div id="resultado-div"></div>
 
