@@ -71,7 +71,7 @@ describe("Ejecutar la combinación de comandos tomando en cuenta una posición i
         expect(executeCommands("AAAAADADAAAAAAA/4,4")).toEqual("1,0 S");
     });
   });
-//Sexta historia de usuario
+//Sexta historia de usuario -> olvidé hacer el commmit de esta historia de usuario
 describe("Ejecutar la combinación de comandos tomando en cuenta una posición inicial especificada y una grilla especificada", () => {
     it("deberia devolver la posición final según la posición inicial, los comandos y los límites de la grilla", () => {
       expect(executeCommands("ADAAAA/3,3/1,1N")).toEqual("3,2 E");
@@ -86,7 +86,7 @@ describe("Ejecutar la combinación de comandos tomando en cuenta una posición i
         expect(executeCommands("AADAADAAAAADA/4,4/1,1O")).toEqual("4,2 S");
     });
   });
-//Verificación de comandos erróneos
+//Séptima historia de usuario -> Verificación de comandos erróneos
   describe("Sending incorrect commands",()=>{
     it("deberia devolver la posición inicial", () => {
         expect(executeCommands("YWFTUB")).toEqual("0,0 N");
