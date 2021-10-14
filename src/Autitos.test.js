@@ -108,4 +108,7 @@ describe("Ejecutar la combinación de comandos tomando en cuenta una posición i
       expect(executeCommands("SSSS/2,2")).toEqual("0,2 N");
       expect(executeCommands("SSS/6,6/2,2N")).toEqual("2,6 N");
     })
+    it("deberia saltar hacia el este",()=>{
+      expect(executeCommands("DSSSS/2,2")).toEqual("2,2 E");
+    })
   });
