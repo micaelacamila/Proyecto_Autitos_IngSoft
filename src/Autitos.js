@@ -32,8 +32,13 @@ export function executeCommands(commands){
                 break;
             }
             case "S":{
-                currentPosition=currentPosition+2;
-                gridPosition[1]=gridPosition[1]+2;
+                currentPosition=currentPosition+1;
+                //console.log("Grid y"+gridPosition[1])
+                if(gridPosition[1]+2<=grid[1]){
+                    //console.log("Ingresa")
+                    gridPosition[1]=gridPosition[1]+2;
+                }
+                
                 break;
             }
             default:{

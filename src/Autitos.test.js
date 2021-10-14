@@ -104,4 +104,8 @@ describe("Ejecutar la combinación de comandos tomando en cuenta una posición i
       expect(executeCommands("S")).toEqual("0,2 N");
       expect(executeCommands("S/4,4/2,2N")).toEqual("2,4 N");
     });
+    it("deberia saltar limitado por la grilla",()=>{
+      expect(executeCommands("SSSS/2,2")).toEqual("0,2 N");
+      expect(executeCommands("SSS/6,6/2,2N")).toEqual("2,6 N");
+    })
   });
