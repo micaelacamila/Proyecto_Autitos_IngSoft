@@ -92,9 +92,16 @@ describe("Ejecutar la combinación de comandos tomando en cuenta una posición i
         expect(executeCommands("YWFTUB")).toEqual("0,0 N");
       });
     it("deberia devolver la posición inicial", () => {
-        expect(executeCommands("MCFPHJS/6,6/2,2E")).toEqual("2,2 E");
+        expect(executeCommands("MCFPHJ/6,6/2,2E")).toEqual("2,2 E");
       });
     it("deberia devolver la posición inicial", () => {
           expect(executeCommands("AAHGTYJKL/6,6/3,1O")).toEqual("1,1 O");
         });
+  });
+  // Probar el saltar
+  describe("Sending S",()=>{
+    it("deberia saltar -> avanzar 2 posiciones",()=>{
+      expect(executeCommands("S")).toEqual("0,2 N");
+      expect(executeCommands("S/4,4/2,2N")).toEqual("2,4 N");
+    });
   });

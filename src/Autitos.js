@@ -31,6 +31,11 @@ export function executeCommands(commands){
                 direction= turnRight(direction);
                 break;
             }
+            case "S":{
+                currentPosition=currentPosition+2;
+                gridPosition[1]=gridPosition[1]+2;
+                break;
+            }
             default:{
                 //The command is ignored
                 currentPosition=currentPosition+1
