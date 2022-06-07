@@ -17,5 +17,6 @@
     "babel-jest": "^27.4.6",
     "jest": "^27.4.7",
     "parcel": "^2.2.0"
-  }
+  },
+  "dependencies": {}
 }
