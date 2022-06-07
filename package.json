@@ -18,5 +18,7 @@
     "jest": "^27.4.7",
     "parcel": "^2.2.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "stable": "^0.1.8"
+  }
 }
